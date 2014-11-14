@@ -1,0 +1,25 @@
+f = open('./Programming-Style-Examples-master/2012_US_election_state.csv', 'r')
+
+print "Opened file:"
+
+all_lines = f.readlines()
+Romney = 0
+Obama  = 0
+#second_line_or_more=False
+counter =0 
+for line in all_lines:
+    if counter > 0:
+        line = line.split(",")
+        Romney = Romney+float(line[-2])
+        Obama  = Obama+float(line[-4])
+    else:
+        counter= 1
+
+    
+print 'Romney total = ',Romney
+print 'Obama total = ',Obama
+
+print "done ("+str(len(all_lines))+" lines)"
+
+
+# In[ ]:
