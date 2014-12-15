@@ -49,15 +49,23 @@ var app = {
      * deviceready Event Handler
      * Don't run any javascript code until this event is fired!!!
      * http://docs.phonegap.com/en/1.0.0/phonegap_events_events.md.html
-     * (remember 'this' is the event, not the app object )
-     */
+     * (remember 'this' is the event, not the app object )*/
+     
     onDeviceReady: function() {
+        /**
+         This code aLerts id there is no connection
+        if(navigator.connection.type == Connection.NONE){
+            alert("No Interwebs");
+            return;
+        }*/
+        
         app.loadData();
         console.log("App: created collection ("+app.countryCollection.length+")");
         app.router = new AppRouter();
         console.log("App: router created");
         Backbone.history.start();
         console.log("App: history started");
+        
     },
 
     /**
